@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         douyu
-// @version      0.1
+// @version      0.2
 // @description  less clutter and wider player
 // @author       h3fang
 // @match        *://*.douyu.com/*
@@ -10,6 +10,7 @@
 (function() {
     'use strict';
 
+    // from https://greasyfork.org/zh-CN/scripts/386642-%E6%96%97%E9%B1%BC%E7%B2%BE%E7%AE%80
     var css = '{display:none !important;height:0 !important}';
     css += '.layout-Player-rank{display:none !important}';
     css += '.layout-Player-barrage{top:0px !important;}';
@@ -83,6 +84,12 @@
     css += '#__h5player > div.recommendView-3e8b62:first-child > div:last-child > div.recommendView-1c2131{display:none !important;}';
     css += '#__h5player > div.recommendAD-54569e:nth-child(9){display:none !important;}';
     css += '#__h5player > div.recommendView-3e8b62:first-child > div:first-child > div{display:none !important;}';
+
+    // custom
+    css += '.PrivilegeGiftModalDialog{display:none !important;}'
+    css += '.LuckyStartEnter{display:none !important;}'
+
+    // wide player
     css += '.layout-Main{padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; width: 100% !important; max-width: 100% !important;}';
     css += '.layout-Player-title{display:none !important;}';
     css += '.layout-Player-aside{height:90% !important;}';
