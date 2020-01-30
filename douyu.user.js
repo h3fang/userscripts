@@ -21,7 +21,7 @@
     css += '.DropPane-ad{display:none !important}';
     css += '.SignBaseComponent-sign-ad{display:none !important}';
     css += '.DropMenuList-ad{display:none !important;}';
-    css += '.AnchorAnnounce{display:none !important;}';
+    // css += '.AnchorAnnounce{display:none !important;}';
     css += '.FansMedalPanel-enter{display:none !important;}';
     css += '.layout-Aside{display:none !important;}';
     css += '.Header-download-wrap{display:none !important;}';
@@ -86,12 +86,17 @@
     css += '#__h5player > div.recommendView-3e8b62:first-child > div:first-child > div{display:none !important;}';
 
     // custom
-    css += '.PrivilegeGiftModalDialog{display:none !important;}'
-    css += '.LuckyStartEnter{display:none !important;}'
+    css += '.PrivilegeGiftModalDialog{display:none !important;}';
+    css += '.LuckyStartEnter{display:none !important;}';
 
     // wide player
     css += '.layout-Main{padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; width: 100% !important; max-width: 100% !important;}';
-    css += '.layout-Player-title{display:none !important;}';
+    css += '.layout-Player-title{margin-bottom: 1px; min-height: 20px;}';
+    css += '.Title{height:100%; padding-left:10px; margin-bottom: 3px;}';
+    css += '.Title-headline{display:inline;}';
+    css += '.Title-headlineH2{margin-right:5px;}';
+    css += '.Title-roomOtherTop{top:3px;}';
+    css += '.Title-categoryWrap{display:inline;}';
     css += '.layout-Player-aside{height:90% !important;}';
     css += '.bc-wrapper{height:10px !important;}';
 
@@ -120,4 +125,9 @@
     }
 
     loadStyle(css);
+
+    setInterval(function() {
+        var e = document.querySelector('.Title-categoryWrap.clearFix');
+        if (e) { e.classList.remove("clearFix"); }
+    }, 1000);
 })();
