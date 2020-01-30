@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         douyu
-// @version      0.2
+// @version      0.3
 // @description  less clutter and wider player
 // @author       h3fang
 // @match        *://*.douyu.com/*
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     // from https://greasyfork.org/zh-CN/scripts/386642-%E6%96%97%E9%B1%BC%E7%B2%BE%E7%AE%80
@@ -95,7 +95,6 @@
     css += '.layout-Player-aside{height:90% !important;}';
     css += '.bc-wrapper{height:10px !important;}';
 
-    loadStyle(css);
     function loadStyle(css) {
         var style = document.createElement('style');
         style.type = 'text/css';
@@ -103,5 +102,22 @@
         style.appendChild(document.createTextNode(css));
         var head = document.getElementsByTagName('head')[0];
         head.appendChild(style);
-   }
+    }
+
+    function set_volume(v) {
+        ['player_storage_volume_h5p_room', 'player_storage_volume_sy_h5p_room'].forEach(key => {
+            var player_storage = JSON.parse(window.localStorage.getItem(key));
+            player_storage.v = String(v);
+            window.localStorage.setItem(key, JSON.stringify(player_storage));
+        });
+    }
+
+    if (window.location.href.match(/\b208114\b/)) {
+        set_volume(0.32);
+    }
+    else {
+        set_volume(0.5);
+    }
+
+    loadStyle(css);
 })();
