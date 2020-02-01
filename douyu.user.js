@@ -126,8 +126,10 @@
 
     loadStyle(css);
 
-    setInterval(function() {
+    var wait_count = 0;
+    var waitForTitle = setInterval(function() {
         var e = document.querySelector('.Title-categoryWrap.clearFix');
         if (e) { e.classList.remove("clearFix"); }
+        if (wait_count++ > 10) { clearInterval(waitForTitle); }
     }, 1000);
 })();
