@@ -13,7 +13,7 @@
     // from https://greasyfork.org/zh-CN/scripts/386642-%E6%96%97%E9%B1%BC%E7%B2%BE%E7%AE%80
     var css = '{display:none !important;height:0 !important}';
     css += '.layout-Player-rank{display:none !important}';
-    css += '.layout-Player-barrage{top:0px !important;}';
+    css += '.layout-Player-barrage{top:40px !important;}';
     css += '.layout-Player-video{bottom:0px !important}';
     css += '.layout-Player-toolbar{visibility:hidden !important;}';
     css += '.layout-Bottom{display:none !important;}';
@@ -92,11 +92,10 @@
     // wide player
     css += '.layout-Main{padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; width: 100% !important; max-width: 100% !important;}';
     css += '.layout-Player-title{margin-bottom: 1px; min-height: 20px;}';
-    css += '.Title{height:100%; padding-left:10px; margin-bottom: 3px;}';
-    css += '.Title-headline{display:inline;}';
-    css += '.Title-headlineH2{margin-right:5px;}';
-    css += '.Title-roomOtherTop{top:3px;}';
-    css += '.Title-categoryWrap{display:inline;}';
+    css += '.Title{height:100%; padding-left:10px; padding-top: 0; padding-bottom: 0;}';
+    css += '.Title-row{display:inline-block !important;}';
+    css += '.Title-roomInfo > .Title-row:nth-child(3){display:none !important;}';
+    css += '.Title-header{overflow:unset !important; text-overflow: clip; max-width: 500px !important;}';
     css += '.layout-Player-aside{height:90% !important;}';
     css += '.bc-wrapper{height:10px !important;}';
 
