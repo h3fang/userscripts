@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         douyu
-// @version      0.3
+// @version      0.4
 // @description  less clutter and wider player
 // @author       h3fang
 // @match        *://*.douyu.com/*
@@ -15,7 +15,7 @@
     css += '.layout-Player-rank{display:none !important}';
     css += '.layout-Player-barrage{top:40px !important;}';
     css += '.layout-Player-video{bottom:0px !important}';
-    css += '.layout-Player-toolbar{visibility:hidden !important;}';
+    // css += '.layout-Player-toolbar{visibility:hidden !important;}';
     css += '.layout-Bottom{display:none !important;}';
     css += '.guessGameContainer.is-normalRoom{display:none !important;}';
     css += '.DropPane-ad{display:none !important}';
@@ -97,7 +97,6 @@
     css += '.Title-roomInfo > .Title-row:nth-child(3){display:none !important;}';
     css += '.Title-header{overflow:unset !important; text-overflow: clip; max-width: 500px !important;}';
     css += '.layout-Player-aside{height:90% !important;}';
-    css += '.bc-wrapper{height:10px !important;}';
 
     function loadStyle(css) {
         var style = document.createElement('style');
@@ -109,6 +108,14 @@
     }
 
     loadStyle(css);
+
+    var root = document.querySelector('#root');
+    if (root) {
+        root.appendChild(document.querySelector('.layout-Main'));
+        document.querySelector('.layout-Main').style.paddingTop = "60px";
+    }
+    document.querySelectorAll('#root > .bc-wrapper').forEach(e => e.parentNode.removeChild(e));
+    document.querySelectorAll('.wm-general').forEach(e => e.parentNode.removeChild(e));
 
     var waitForTitle = setInterval(function() {
         var e = document.querySelector('.Title-categoryWrap.clearFix');
