@@ -40,8 +40,6 @@
     css += '.layout-Module-head.FollowList-head.is-fixed{display:none !important;}';
     css += '.layout-Banner-item{display:none !important;}';
     css += '.layout-Module-extra{display:none !important;}';
-    css += '.Title-anchorPic{display:none !important;}';
-    css += '.Title-roomOtherBottom{display:none !important;}';
     css += '.Act129684Bar-view1{display:none !important;}';
     css += '.Act129684Bar-content{display:none !important;}';
     css += '.Act129684-logo{display:none !important;}';
@@ -63,7 +61,6 @@
     css += '.ActSuperFansGroup-component.ActSuperFansGroupBar-plusBody{display:none !important;}';
     css += '.ActSuperFansGroup-logo{display:none !important;}';
     css += '.ActSuperFansGroup-switch{display:none !important;}';
-    css += '.TitleSuperFansIcon{display:none !important;}';
     css += '.Act156581Bar{display:none !important;}';
     css += '.Act159742Bar-main--pre{display:none !important;}';
     css += '.Act159742-logo{display:none !important;}';
@@ -72,18 +69,16 @@
     css += '.Act163201Bar-wrap{display:none !important;}';
     css += '.Act163201-logo{display:none !important;}';
     css += '.ActBase-switchWrap{display:none !important;}';
-    css += '.Title-columnTag{display:none !important;}';
-    css += '.Title-impress.clearFix{display:none !important;}';
     css += '.content-0fa509{display:none !important;}';
     css += '.Frawdroom{display:none !important;}';
     css += '#js-room-activity{display:none !important;}';
-    css += '#js-player-dialog > div.player-dialog > div.PcDiversion:nth-child(8){display:none !important;}';
     css += '#bc1915{display:none !important;}';
     css += '#bc1215{display:none !important;}';
     css += '#__h5player > div.recommendApp-0e23eb:nth-child(3){display:none !important;}';
     css += '#__h5player > div.recommendView-3e8b62:first-child > div:last-child > div.recommendView-1c2131{display:none !important;}';
     css += '#__h5player > div.recommendAD-54569e:nth-child(9){display:none !important;}';
     css += '#__h5player > div.recommendView-3e8b62:first-child > div:first-child > div{display:none !important;}';
+    css += '#js-player-title > div.Title > div.Title-roomInfo:last-child > div.Title-row:last-child{display:none !important;}';
 
     // custom
     css += '.PrivilegeGiftModalDialog{display:none !important;}';
