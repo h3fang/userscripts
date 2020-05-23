@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         douyu
-// @version      0.4
+// @version      0.5
 // @description  less clutter and wider player
 // @author       h3fang
 // @match        *://*.douyu.com/*
@@ -116,4 +116,34 @@
         var e = document.querySelector('.Title-categoryWrap.clearFix');
         if (e) { e.classList.remove("clearFix"); }
     }, 1000);
+
+    window.onload = function(){
+        const startTime = new Date().getTime()
+        let count = 1
+        function autoClick(){
+            let dom = Array.from(document.querySelectorAll('input')).find((item,index)=>{return item.value.includes('画质')})
+            if(dom){
+                const ul_dom = Array.from(dom.parentNode.childNodes).find((item)=>item.tagName=='UL')
+                const li_dom = Array.from(ul_dom.childNodes)
+                for (const item of li_dom) {
+                    if(item.innerText=='超清'){
+                        item.click()
+                        console.log('已切换到超清')
+                        break
+                    }
+                }
+                const endTime = new Date().getTime()
+                console.log(`脚本结束，耗时：${(endTime-startTime)/1000}秒`)
+            }else{
+                if(count++<20){
+                    setTimeout(()=>{
+                        autoClick()
+                    },1000)
+                }else{
+                    console.log('脚本结束，可能此网站不是直播间')
+                }
+            }
+        }
+        autoClick()
+    }
 })();
