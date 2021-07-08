@@ -12,14 +12,15 @@
 
     var title_height = document.querySelector('.Header').offsetHeight;
     var player = document.querySelector('.layout-Main');
-    document.querySelectorAll('.wm-general').forEach(e => {
-        if (!e.contains(player)) {
-            e.remove();
-        }
-        else {
-            e.style['margin-top'] = title_height + "px";
-        }
-    });
+    var root = document.querySelector('#root');
+    if (root) {
+        player.style.paddingTop = title_height + "px";
+        root.appendChild(player);
+    }
+    else {
+        player.style.paddingTop = "0";
+    }
+    document.querySelectorAll('.wm-general').forEach(e => e.remove());
     document.querySelectorAll('#root > .bc-wrapper').forEach(e => e.remove());
 
     // from https://greasyfork.org/zh-CN/scripts/386642-%E6%96%97%E9%B1%BC%E7%B2%BE%E7%AE%80
@@ -109,7 +110,7 @@
     css += '.LuckyStartEnter{display:none !important;}';
 
     // wide player
-    css += '.layout-Main{padding-top: 0 !important; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; width: 100% !important; max-width: 100% !important;}';
+    css += 'padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; width: 100% !important; max-width: 100% !important;}';
     css += '.layout-Player-title{margin-bottom: 1px; min-height: 20px;}';
     css += '.Title{height:100%; padding-left:10px; padding-top: 0; padding-bottom: 0;}';
     css += '.Title-row{display:inline-block !important;}';
@@ -128,3 +129,4 @@
 
     loadStyle(css);
 })();
+
